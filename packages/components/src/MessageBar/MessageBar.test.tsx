@@ -26,7 +26,7 @@
 
 import 'jest-styled-components'
 import React from 'react'
-import { assertSnapshot } from '@looker/components-test-utils'
+import { assertSnapshot, renderWithTheme } from '@looker/components-test-utils'
 import { MessageBar } from './MessageBar'
 
 test('Warn MessageBar', () => {
@@ -67,4 +67,14 @@ test('MessageBar can be dismissed', () => {
       Info!
     </MessageBar>
   )
+})
+
+test('MessageBar with aria-label works', () => {
+  const { findByLabelText } = renderWithTheme(
+    <MessageBar intent="positive" aria-label="Hello world">
+      Goodbye sweet world
+    </MessageBar>
+  )
+
+  expect(findByLabelText('Hello world')).toBeVisible()
 })
