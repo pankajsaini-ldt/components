@@ -26,12 +26,12 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { ComponentsProvider } from '@looker/components'
-import { FieldsetAccordionDemo } from './Form/FieldsetAccordionDemo'
+import { OptionsGroupDemo } from './Form/OptionsGroupDemo'
 
 const App = () => {
   return (
     <ComponentsProvider>
-      <FieldsetAccordionDemo />
+      <OptionsGroupDemo />
     </ComponentsProvider>
   )
 }
